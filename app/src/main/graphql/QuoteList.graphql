@@ -1,0 +1,7 @@
+query QuoteList{
+    quotes{
+        id
+        quote
+        author
+    }
+}
