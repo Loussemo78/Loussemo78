@@ -21,17 +21,17 @@ class QuoteViewModel @Inject constructor(
     private val repository: QuoteRepository,
     ): ViewModel() {
     private val _quoteList by lazy { MutableLiveData<ViewState<Response<QuoteListQuery.Data>>>() }
-    val charactersList: LiveData<ViewState<Response<QuoteListQuery.Data>>>
+    val quoteList: LiveData<ViewState<Response<QuoteListQuery.Data>>>
         get() = _quoteList
 
-    fun queryCharactersList() = viewModelScope.launch {
+    fun queryQuoteList() = viewModelScope.launch {
         _quoteList.postValue(ViewState.Loading())
         try {
             val response = repository.queryQuoteList()
             _quoteList.postValue(ViewState.Success(response))
         } catch (e: ApolloException) {
             Log.d("ApolloException", "Failure", e)
-            _quoteList.postValue(ViewState.Error("Error fetching characters"))
+            _quoteList.postValue(ViewState.Error("Error fetching quote"))
         }
     }
 }

@@ -22,7 +22,7 @@
         tools:listitem="@layout/item_quote" />
 
     <ProgressBar
-        android:id="@+id/characters_fetch_progress"
+        android:id="@+id/quote_fetch_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,14 +31,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/characters_empty_text"
+        android:id="@+id/quote_empty_text"
         style="@style/Base.TextAppearance.AppCompat.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/characters_fetch_progress"
+        app:layout_constraintTop_toBottomOf="@id/quote_fetch_progress"
         tools:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
