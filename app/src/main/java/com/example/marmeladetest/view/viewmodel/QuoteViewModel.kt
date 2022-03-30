@@ -17,6 +17,7 @@ import javax.inject.Inject
 @ExperimentalCoroutinesApi
 @HiltViewModel
 class QuoteViewModel @Inject constructor(
+
     private val repository: QuoteRepository,
     ): ViewModel() {
     private val _quoteList by lazy { MutableLiveData<ViewState<Response<QuoteListQuery.Data>>>() }
